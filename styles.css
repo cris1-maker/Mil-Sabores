@@ -7,6 +7,11 @@ html, body {
   flex-direction: column;
 }
 
+h3, h4 , p {
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+  color: white;
+  font-weight: bold;
+}
 .container, .section {
   flex: 1; /* Empuja el footer hacia abajo */
 }
@@ -26,6 +31,77 @@ nav .brand-logo {
   display: flex;
   align-items: center;
   margin-right: 20px; /* Espacio con el menú */
+}
+#nav-mobile a {
+  position: relative;
+  font-size: 1.1em;
+  color:white;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 40px;
+}
+
+#nav-mobile a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  height: 2px;
+  background: white;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+#nav-mobile a:hover::after {
+  transform: scaleX(1);
+}
+
+.productos-container{
+    width: 80%;               /* Ajusta el ancho a tu gusto */
+    margin: 50px auto;        /* Centra horizontalmente y con margen superior */
+    padding: 20px;            /* Espacio interno */
+    background-color: #561411; /* Fondo gris claro, cambia por el color que quieras */
+    /*background-image: url(img/text.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size:contain;*/
+    border-radius: 10px;      /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombra opcional */
+    border: #ffffff 8px solid ; /* Borde rosa */
+}
+
+.productos-container h4 {
+    color: #feaee9;             /* Color del texto */
+    text-align: center;       /* Centra el texto */
+    margin-bottom: 20px;      /* Espacio debajo del título */
+}
+
+.carousel-container {
+  position: relative;
+  width: 600px;     
+  margin: 0 auto;    /* ya hace que se centre horizontalmente */
+  display: flex;
+  justify-content: center;  /* centra el contenido interno */
+  align-items: center;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center; /* centra horizontalmente */
+  align-items: center;     /* centra verticalmente */
+  gap: 20px;               /* opcional: espacio entre imágenes */
+  overflow: hidden;         /* oculta desbordes */
+}
+
+.carousel .carousel-item img {
+  width: auto;          /* que no se estiren */
+  max-width: 100%;      /* no se salga del contenedor */
+  height: 300px;
+  object-fit: contain;  
+  display: block;       /* evita espacio inferior */
+  margin: 0 auto;       /* centra la imagen dentro del item */
+  border-radius: 10px;
 }
 /* Footer */
 .page-footer {
