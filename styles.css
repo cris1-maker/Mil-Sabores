@@ -1,0 +1,36 @@
+/* Fondo general */
+/* Para que el footer se mantenga al fondo */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.container, .section {
+  flex: 1; /* Empuja el footer hacia abajo */
+}
+
+body {
+  background-image: url(img/fondo.jpeg);
+  background-size: cover;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: small;
+}
+
+nav {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+nav .brand-logo {
+  display: flex;
+  align-items: center;
+  margin-right: 20px; /* Espacio con el menú */
+}
+/* Footer */
+.page-footer {
+  background-color: transparent !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  padding: 5px 0;
+}
