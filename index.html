@@ -7,25 +7,38 @@
   <!-- Materialize -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Botones sociales verticales -->
+    <div class="social-buttons">
+        <a href="https://facebook.com" target="_blank" class="btn-floating blue darken-4">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="btn-floating pink lighten-2">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://wa.me/56912345678" target="_blank" class="btn-floating gradient-green">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
     <!-- NAVBAR -->
     <nav class="transparent z-depth-5">
         <div class="nav-wrapper container">
             <a href="index.html" class="brand-logo">Mil Sabores</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">Location</a></li>
+                <li><a href="#">Conócenos</a></li>
+                <li><a href="#">Menú</a></li>
+                <li><a href="#">Reserva Aquí</a></li>
                 <li>
                     <a class="btn-medium  transparent">
-                    <i class="material-icons">add_shopping_cart</i>
+                    <i class="fas fa-shopping-cart"></i>
                     </a>
                 </li>
                 <li>
-                    <a class="btn-medium transparent" id="btnLoginSup" type="button" href="registro.html?open=login">
-                        <i class="material-icons">account_circle</i>
+                    <a class="btn-medium transparent" id="btnLoginSup" >
+                        <i class="fas fa-user"></i>
                     </a>
                 </li>
 
@@ -34,28 +47,38 @@
     </nav>
     <!-- DIV CONTENT -->
     <div class="container center-align">
-        <img src="img/logo.png" alt="Logo" class="circle responsive-img" style="width:200px; height:auto; margin-top:60px;">
+        <img src="img/logo.png" alt="Logo" class="circle responsive-img" style="width:150px; height:auto; margin-top:60px;">
         <h3>Bienvenidos a Mil Sabores</h3>
         <p>Tu destino dulce para pasteles y postres excepcionales</p>
-
     </div>
     <!-- PRODUCTOS -->
     <div class="container productos-container">
+        <div class="badge-destacados">Destacados</div> 
         <div class="carousel-container">
+            <div class="carousel-text-banner" id="textBanner">Repostería</div>
             <!-- Carrusel -->
             <div class="carousel carousel-slider center" id="myCarousel">
-                <a class="carousel-item" href="#one!"><img src="img/torta.png" alt="Imagen 1"></a>
-                <a class="carousel-item" href="#two!"><img src="img/Boda.png" alt="Imagen 2"></a>
-                <a class="carousel-item" href="#three!"><img src="img/cheese.png" alt="Imagen 3"></a>
-                <a class="carousel-item" href="#four!"><img src="img/croasan.png" alt="Imagen 4"></a>
-                <a class="carousel-item" href="#five!"><img src="img/galleta.png" alt="Imagen 5"></a>
-            </div>
-        </div>
-    </div>
-    <div class="container center-align">
-        <h4>Nuestros productos</h4>
-        <p>Descubre la variedad de delicias que ofrecemos en nuestra pastelería. Desde tortas personalizadas hasta galletas artesanales, cada producto está hecho con ingredientes frescos y mucho amor. ¡Explora nuestro menú y encuentra tu próximo antojo dulce!</p>
+                <div class="carousel-item">
+                    <img src="img/torta.png" alt="Imagen 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/Boda.png" alt="Imagen 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/cheese.png" alt="Imagen 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/croasan.png" alt="Imagen 4">
 
+                </div>
+                <div class="carousel-item">
+                    <img src="img/galleta.png" alt="Imagen 5">
+                </div>
+            </div>
+
+
+        </div>
+        </div>
     </div>  
     <!-- FOOTER -->
     <footer class="page-footer transparent z-depth-5">

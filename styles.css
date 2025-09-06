@@ -10,7 +10,7 @@ html, body {
 h3, h4 , p {
   text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
   color: white;
-  font-weight: bold;
+  font-weight: normal;
 }
 .container, .section {
   flex: 1; /* Empuja el footer hacia abajo */
@@ -19,7 +19,7 @@ h3, h4 , p {
 body {
   background-image: url(img/fondo.jpeg);
   background-size: cover;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: small;
 }
 
@@ -31,6 +31,7 @@ nav .brand-logo {
   display: flex;
   align-items: center;
   margin-right: 20px; /* Espacio con el menú */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 #nav-mobile a {
   position: relative;
@@ -57,18 +58,15 @@ nav .brand-logo {
   transform: scaleX(1);
 }
 
-.productos-container{
-    width: 80%;               /* Ajusta el ancho a tu gusto */
-    margin: 50px auto;        /* Centra horizontalmente y con margen superior */
-    padding: 20px;            /* Espacio interno */
-    background-color: #561411; /* Fondo gris claro, cambia por el color que quieras */
-    /*background-image: url(img/text.png);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size:contain;*/
-    border-radius: 10px;      /* Bordes redondeados */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombra opcional */
-    border: #ffffff 8px solid ; /* Borde rosa */
+.productos-container {
+    position: relative; /* referencia para la etiqueta */
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #561411;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border: #ffffff 8px solid;
 }
 
 .productos-container h4 {
@@ -94,6 +92,42 @@ nav .brand-logo {
   overflow: hidden;         /* oculta desbordes */
 }
 
+.carousel-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-text-banner {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(253, 252, 252, 0.188);
+  padding: 12px 30px;
+  border-radius: 2px;
+  font-size: 1.8em;
+  font-weight: 600;
+  color: #fff;
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  animation: fadeSlide 0.8s ease-in-out;
+  white-space: nowrap;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
 .carousel .carousel-item img {
   width: auto;          /* que no se estiren */
   max-width: 100%;      /* no se salga del contenedor */
@@ -103,6 +137,68 @@ nav .brand-logo {
   margin: 0 auto;       /* centra la imagen dentro del item */
   border-radius: 10px;
 }
+
+/* Etiqueta en diagonal en la esquina superior derecha */
+.badge-destacados {
+    position: absolute;
+    top: 20px;
+    right: -50px; /* sobresale del borde */
+    background: linear-gradient(45deg, #d50a0a, #ff0000);
+    color: #ffffff;
+    font-weight: bold;
+    padding: 15px 60px; /* ancho suficiente para cruzar la esquina */
+    border-radius: 6px;
+    transform: rotate(45deg);
+    z-index: 20;
+    font-size: 1.2em;
+    text-align: center;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+    border: 3px solid #ffffff;
+}
+
+/* Ajuste responsive */
+@media screen and (max-width: 992px) {
+    .badge-destacados {
+        padding: 12px 45px;
+        font-size: 1.2em;
+        right: -40px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .badge-destacados {
+        padding: 10px 35px;
+        font-size: 1em;
+        right: -30px;
+    }
+} 
+
+.social-buttons {
+  position: fixed;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.social-buttons .btn-floating {
+  width: 40px;
+  height: 40px;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease;
+}
+
+.social-buttons .btn-floating:hover {
+  transform: scale(1.1);
+}
+
 /* Footer */
 .page-footer {
   background-color: transparent !important;
@@ -110,3 +206,4 @@ nav .brand-logo {
   text-align: center;
   padding: 5px 0;
 }
+

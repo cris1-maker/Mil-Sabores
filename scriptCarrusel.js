@@ -1,20 +1,31 @@
-
-document.addEventListener('DOMContentLoaded', function() {
-  // Inicializa el carrusel como slider (pantalla completa de cada ítem)
-  const elems = document.querySelectorAll('.carousel');
-  const instances = M.Carousel.init(elems, {
-    fullWidth: true, // ocupa todo el ancho
-    indicators: false // puntitos indicadores abajo
+document.addEventListener('DOMContentLoaded', function () {
+  const carouselElems = document.querySelectorAll('.carousel');
+  const carouselInstances = M.Carousel.init(carouselElems, {
+    fullWidth: true,
+    indicators: false
   });
 
-  // Función autoplay
-  setInterval(() => {
-    instances.forEach(instance => {
-      instance.next(); // pasa a la siguiente imagen
-    });
-  }, 3000); // cambia cada 3 segundos
-});
+  const frases = [
+    "Repostería",
+    "Reserva para bodas",
+    "Para compartir",
+    "Croissants rellenos",
+    "Galletas artesanales"
+  ];
 
+  let index = 0;
+  const textBanner = document.getElementById("textBanner");
+
+  setInterval(() => {
+    carouselInstances.forEach(instance => instance.next());
+
+    index = (index + 1) % frases.length;
+    textBanner.textContent = frases[index];
+    textBanner.classList.remove("fadeIn");
+    void textBanner.offsetWidth; // reinicia animación
+    textBanner.classList.add("fadeIn");
+  }, 3000);
+});
 
 document.addEventListener('DOMContentLoaded', function() {
   var elems = document.querySelectorAll('.dropdown-trigger');
@@ -24,7 +35,3 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.dropdown-trigger');
-    M.Dropdown.init(elems, {coverTrigger: false});
-    });
