@@ -1,0 +1,375 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+h3, h4 , p {
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+  color: white;
+  font-weight: bold;
+ 
+}
+body {
+  background-image: url(img/fondo.jpeg);
+  background-size: cover;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: small;
+}
+/* Navbar */
+nav {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+
+
+nav .brand-logo {
+  display: flex;
+  align-items: center;
+  margin-right: 20px; /* Espacio con el menú */
+}
+
+#nav2  {
+  background-color: #6c3632 !important;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  line-height: 40px;
+}
+
+#brand-logo h3 {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 3em;
+  color: #ffffff;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
+#brand-logo p {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-size: 1.2em;
+  color: #fdfdfd;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+  margin-top: -10px;
+}
+
+/* Footer */
+.page-footer {
+  background-color: transparent !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  padding: 5px 0;
+}
+
+#nav-mobile a {
+  position: relative;
+  font-size: 1.1em;
+  color:white;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 40px;
+}
+
+#nav-mobile a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  height: 2px;
+  background: white;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+#nav-mobile a:hover::after {
+  transform: scaleX(1);
+}
+.wrapper {
+    position: relative;
+    margin-top: 100px;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0,0, .2);
+    color: white;
+    display: flex;
+    border-radius: 20px;
+    justify-content: center;  
+    align-self: center;
+    transition: transform 0.3s ease, height .2s ease;
+    overflow: hidden;
+    transform: scale(0);
+}
+
+.wrapper:hover {
+    transform: scale(1.05); /* 5% más grande */
+}
+
+.wrapper.active-popup {
+    transform: scale(1);
+}
+
+.wrapper.active{
+    max-height: 520px;
+}
+
+.wrapper .login-form {
+    transition: transform 0.18s ease;
+    transform: translateX(0);
+}
+.wrapper.active .login-form {
+    transition: none;
+    transform: translateX(-400px);  
+}
+.wrapper .register-form {
+    position: absolute;
+    transform: translateX(400px);
+    transition: none;
+}
+.wrapper.active .register-form {
+    transition: transform 0.18s ease;
+    transform: translateX(0);
+}
+.wrapper h1 {
+    font-size: 36px;
+    text-align: center;
+}
+
+.wrapper .input-box {
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+    height: 50px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    border:2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: white;
+    padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder{
+    color: white;
+}
+
+.input-box i {
+    position: absolute;
+    right:20px;
+    top: 50px;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+.login-form .remember-forgot {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* separación horizontal */
+    margin: 10px 0;
+    color: white;
+}
+
+
+
+.remember-forgot label input{
+    accent-color: rgb(31, 18, 18);
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: white;           /* Cambia el color del texto */
+    text-decoration: none;  /* Quita el subrayado */     /* Opcional: peso de la fuente */
+}
+
+.remember-forgot a:hover {           /* Cambia el color cuando pasas el mouse */
+    text-decoration: underline;
+}
+
+.login p a {
+    color: white;    
+    text-decoration: none;       /* Cambia el color del texto */
+}
+.login p a:hover {
+    text-decoration: underline;      /* Cambia el color del texto */
+}
+.wrapper .btn {
+    width: 100%;
+    height: 45px;
+    background: white;
+    color: #333;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+}
+
+.wrapper .login{
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.wrapper .login-register {
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.login-register p a {
+    color:white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-register p a:hover{
+   text-decoration: underline;
+}
+
+.btnLogin{
+    width: 100%;
+    height: 45px;
+    background: white;
+    border:none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color:#333;
+    font-weight: 600;
+}
+
+.btnRegister{
+    width: 100%;
+    height: 45px;
+    background: white;
+    border:none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color:#333;
+    font-weight: 600;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px ;
+    background-color: rgba(0, 0, 0, 0.064);
+    z-index: 99;
+}
+
+.logo {
+    font-size: 2em;
+    color: white;
+    user-select: none;
+}
+
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color:white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+    height: 2px;
+    background: white;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.navigation a:hover::after {
+    transform: scaleX(1);
+}
+.navigation .btnLoginSup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+.navigation .btnLoginSup:hover {
+    background: white;
+    color: #333;
+}
+
+.conditions {
+    margin: 20px 0;
+    font-size: 14px;
+}
+
+
+.wrapper .icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background : rgba(255, 255, 255, 0.105);
+    justify-content: center;
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    z-index: 1;
+}
+
+/* Footer */
+
+.page-footer {
+ background-color: transparent !important;
+ border-top: 1px solid rgba(255, 255, 255, 0.2);
+ text-align: center;
+ padding: 5px 0;
+
+}
+
+
+
+main {
+
+ flex: 1;        /* ocupa todo el espacio disponible */
+
+ display: flex;     /* activa flexbox */
+
+ justify-content: center;/* centra horizontalmente */
+
+ align-items: center;  /* centra verticalmente */
+
+}
+
