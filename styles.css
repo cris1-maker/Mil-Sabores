@@ -286,7 +286,8 @@ select {
 /* ===== CAROUSEL ===== */
 .carousel-container {
   position: relative;
-  width: 600px;
+  width: 100%;
+  max-width: 600px; /* ancho máximo en desktop */
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -299,6 +300,7 @@ select {
   align-items: center;
   gap: 20px;
   overflow: hidden;
+  width: 100%;
 }
 
 .carousel-item {
@@ -309,43 +311,71 @@ select {
 }
 
 .carousel .carousel-item img {
-  width: auto;
+  width: 100%;
   max-width: 100%;
-  height: 300px;
+  height: auto;
   object-fit: contain;
   display: block;
   margin: 0 auto;
   border-radius: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
 }
 
+/* Banner de texto */
 .carousel-text-banner {
   position: absolute;
-  top: 30px;
+  top: 20px;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(253, 252, 252, 0.188);
-  padding: 12px 30px;
-  border-radius: 2px;
-  font-size: 1.8em;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.5em;
   font-weight: 600;
   color: #fff;
-  font-family: 'Segoe UI', 'Roboto', sans-serif;
   text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   animation: fadeSlide 0.8s ease-in-out;
   white-space: nowrap;
 }
 
+/* Animación */
 @keyframes fadeSlide {
-  from {
-    opacity: 0;
-    transform: translateX(-50%) translateY(-20px);
+  from { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media screen and (max-width: 992px) {
+  .carousel-container {
+    max-width: 450px;
   }
-  to {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
+  .carousel-text-banner {
+    font-size: 1.3em;
+    padding: 8px 16px;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .carousel-container {
+    max-width: 90%; /* se ajusta casi al 100% de la pantalla */
+  }
+  .carousel .carousel-item img {
+    height: auto; /* se adapta automáticamente */
+  }
+  .carousel-text-banner {
+    font-size: 1.1em;
+    padding: 6px 12px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .carousel-text-banner {
+    font-size: 1em;
+    padding: 4px 10px;
+  }
+}
+
 
 /* ===== BADGE DESTACADOS ===== */
 .badge-destacados {
