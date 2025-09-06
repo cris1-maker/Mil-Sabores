@@ -199,6 +199,49 @@ nav .brand-logo {
   transform: scale(1.1);
 }
 
+/* SECCIÓN EQUIPO */
+.team-section {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.team-container {
+    background-color: white;
+    padding: 10px 60px; /* menos alto (vertical) y más ancho (horizontal) */
+    border-radius: 0px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 1200px; /* ancho máximo del contenedor */
+    width: 90%; /* ocupa casi todo el ancho disponible */
+    margin: 0 auto; /* centra el contenedor */
+}
+
+.team-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* centra todos los miembros */
+    gap: 40px; /* espacio uniforme entre miembros */
+}
+
+.team-member {
+    text-align: center; /* centra texto e imagen dentro de cada miembro */
+    transition: transform 0.3s;
+}
+
+.team-member img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; /* centra la imagen */
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+
+
 /* Footer */
 .page-footer {
   background-color: transparent !important;
