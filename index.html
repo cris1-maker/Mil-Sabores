@@ -11,82 +11,94 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Botones sociales verticales -->
-    <div class="social-buttons">
-        <a href="https://facebook.com" target="_blank" class="btn-floating blue darken-4">
-            <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://instagram.com" target="_blank" class="btn-floating pink lighten-2">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://wa.me/56912345678" target="_blank" class="btn-floating gradient-green">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-    </div>
-    <!-- NAVBAR -->
-    <nav class="transparent z-depth-5">
-        <div class="nav-wrapper container">
-            <a href="index.html" class="brand-logo">Mil Sabores</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="nosotros.html">Conócenos</a></li>
-                <li><a href="productos.html">Menú</a></li>
-                <li><a href="#">Reserva Aquí</a></li>
-                <li>
-                    <a class="btn-medium  transparent">
-                    <i class="fas fa-shopping-cart"></i>
-                    </a>
-                </li>
-                <li>
-                    <a class="btn-medium transparent" id="btnLoginSup" href="registro.html">
-                        <i class="fas fa-user"></i>
-                    </a>
-                </li>
+  <!-- Botones sociales verticales -->
+  <div class="social-buttons">
+    <a href="https://facebook.com" target="_blank" class="btn-floating blue darken-4">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://instagram.com" target="_blank" class="btn-floating pink lighten-2">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://wa.me/56912345678" target="_blank" class="btn-floating gradient-green">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
 
-            </ul>
-        </div>
-    </nav>
-    <!-- DIV CONTENT -->
+  <!-- NAVBAR -->
+  <nav class="transparent z-depth-5">
+    <div class="nav-wrapper container">
+      <a href="index.html" class="brand-logo">Mil Sabores</a>
+      <!-- Botón hamburguesa para móvil -->
+      <a href="#" data-target="mobile-nav" class="sidenav-trigger">
+        <i class="material-icons">menu</i>
+      </a>
+      <!-- Navbar desktop -->
+      <ul id="nav-desktop" class="right hide-on-med-and-down">
+        <li><a href="nosotros.html">Conócenos</a></li>
+        <li><a href="productos.html">Menú</a></li>
+        <li><a href="#">Reserva Aquí</a></li>
+        <li>
+          <a class="btn-medium transparent">
+            <i class="fas fa-shopping-cart"></i>
+          </a>
+        </li>
+        <li>
+          <a class="btn-medium transparent" id="btnLoginSup" href="registro.html">
+            <i class="fas fa-user"></i>
+          </a>
+        </li>
+      </ul>
+      <!-- Sidenav móvil -->
+      <ul class="sidenav" id="mobile-nav">
+        <li><a href="nosotros.html">Conócenos</a></li>
+        <li><a href="productos.html">Menú</a></li>
+        <li><a href="#">Reserva Aquí</a></li>
+        <li>
+          <a class="btn-medium transparent">
+            <i class="fas fa-shopping-cart"></i> Carrito
+          </a>
+        </li>
+        <li>
+          <a class="btn-medium transparent" href="registro.html">
+            <i class="fas fa-user"></i> Login
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Contenido principal -->
+  <div class="container center-align">
+    <img src="img/logo.png" alt="Logo" class="circle responsive-img" style="width:150px; height:auto; margin-top:60px;">
+    <h3>Bienvenidos a Mil Sabores</h3>
+    <p>Tu destino dulce para pasteles y postres excepcionales</p>
+  </div>
+
+  <!-- Productos / Carrusel -->
+  <div class="container productos-container">
+    <div class="badge-destacados">Destacados</div> 
+    <div class="carousel-container">
+      <div class="carousel-text-banner" id="textBanner">Repostería</div>
+      <div class="carousel carousel-slider center" id="myCarousel">
+        <div class="carousel-item"><img src="img/torta.png" alt="Imagen 1"></div>
+        <div class="carousel-item"><img src="img/Boda.png" alt="Imagen 2"></div>
+        <div class="carousel-item"><img src="img/cheese.png" alt="Imagen 3"></div>
+        <div class="carousel-item"><img src="img/croasan.png" alt="Imagen 4"></div>
+        <div class="carousel-item"><img src="img/galleta.png" alt="Imagen 5"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="page-footer transparent z-depth-5">
     <div class="container center-align">
-        <img src="img/logo.png" alt="Logo" class="circle responsive-img" style="width:150px; height:auto; margin-top:60px;">
-        <h3>Bienvenidos a Mil Sabores</h3>
-        <p>Tu destino dulce para pasteles y postres excepcionales</p>
+      <p>&copy; 2025 Pastelería Mil Sabores. Todos los derechos reservados.</p>
     </div>
-    <!-- PRODUCTOS -->
-    <div class="container productos-container">
-        <div class="badge-destacados">Destacados</div> 
-        <div class="carousel-container">
-            <div class="carousel-text-banner" id="textBanner">Repostería</div>
-            <!-- Carrusel -->
-            <div class="carousel carousel-slider center" id="myCarousel" >
-                <div class="carousel-item">
-                    <img src="img/torta.png" alt="Imagen 1" >
-                </div>
-                <div class="carousel-item">
-                    <img src="img/Boda.png" alt="Imagen 2" >
-                </div>
-                <div class="carousel-item">
-                    <img src="img/cheese.png" alt="Imagen 3" >
-                </div>
-                <div class="carousel-item">
-                    <img src="img/croasan.png" alt="Imagen 4">
-                </div>
-                <div class="carousel-item">
-                    <img src="img/galleta.png" alt="Imagen 5" >
-                </div>
-            </div>
+  </footer>
 
-
-        </div>
-        </div>
-    </div>  
-    <!-- FOOTER -->
-    <footer class="page-footer transparent z-depth-5">
-        <div class="container center-align">
-        <p>&copy; 2025 Pasteleria Mil sabores. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-    <!-- Materialize JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="scriptCarrusel.js"></script>
+  <!-- Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- Tu JS separado -->
+  <script src="scriptCarrusel.js"></script>
 </body>
 </html>

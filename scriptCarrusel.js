@@ -27,15 +27,16 @@ document.addEventListener('DOMContentLoaded', function () {
     textBanner.classList.add("fadeIn");
   }, 3000);
 
-  // Inicialización de dropdown
-  var elems = document.querySelectorAll('.dropdown-trigger');
-  M.Dropdown.init(elems, { coverTrigger: false, constrainWidth: false });
+  // Inicialización de dropdowns
+  M.Dropdown.init(document.querySelectorAll('.dropdown-trigger'), { coverTrigger: false, constrainWidth: false });
 
-  // Click en cualquier imagen del carrusel va a productos.html
-  const carouselImages = document.querySelectorAll('#myCarousel .carousel-item img');
-  carouselImages.forEach(img => {
+  // Inicialización del sidenav
+  M.Sidenav.init(document.querySelectorAll('.sidenav'));
+
+  // Click en imágenes del carrusel
+  document.querySelectorAll('#myCarousel .carousel-item img').forEach(img => {
     img.addEventListener('click', () => {
-      window.location.href = 'productos.html'; // redirige al HTML productos
+      window.location.href = 'productos.html';
     });
   });
 });
