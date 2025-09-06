@@ -1,10 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
+  // Inicialización del carrusel
   const carouselElems = document.querySelectorAll('.carousel');
   const carouselInstances = M.Carousel.init(carouselElems, {
     fullWidth: true,
     indicators: false
   });
 
+  // Banner de texto
   const frases = [
     "Repostería",
     "Reserva para bodas",
@@ -12,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
     "Croissants rellenos",
     "Galletas artesanales"
   ];
-
   let index = 0;
   const textBanner = document.getElementById("textBanner");
 
@@ -25,7 +26,21 @@ document.addEventListener('DOMContentLoaded', function () {
     void textBanner.offsetWidth; // reinicia animación
     textBanner.classList.add("fadeIn");
   }, 3000);
+
+  // Inicialización de dropdown
+  var elems = document.querySelectorAll('.dropdown-trigger');
+  M.Dropdown.init(elems, { coverTrigger: false, constrainWidth: false });
+
+  // Click en cualquier imagen del carrusel va a productos.html
+  const carouselImages = document.querySelectorAll('#myCarousel .carousel-item img');
+  carouselImages.forEach(img => {
+    img.addEventListener('click', () => {
+      window.location.href = 'productos.html'; // redirige al HTML productos
+    });
+  });
 });
+
+
 
 document.addEventListener('DOMContentLoaded', function() {
   var elems = document.querySelectorAll('.dropdown-trigger');

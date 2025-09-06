@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Productos | Mil Sabores</title>
+
+  <!-- Materialize CSS -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!--  Estilos personalizados-->
+</head>
+<body>
+  <!-- Botones sociales verticales -->
+    <div class="social-buttons">
+        <a href="https://facebook.com" target="_blank" class="btn-floating blue darken-4">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="btn-floating pink lighten-2">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://wa.me/56912345678" target="_blank" class="btn-floating gradient-green">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+    <!-- NAVBAR -->
+    <nav class="transparent z-depth-5">
+        <div class="nav-wrapper container">
+            <a href="index.html" class="brand-logo">Mil Sabores</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="nosotros.html">Conócenos</a></li>
+                <li><a href="productos.html">Menú</a></li>
+                <li><a href="#">Reserva Aquí</a></li>
+                <li>
+                    <a class="btn-medium  transparent">
+                    <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="btn-medium transparent" id="btnLoginSup" href="registro.html">
+                        <i class="fas fa-user"></i>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+  <!-- Título -->
+  <div class="section center-align">
+    <h4 class="-text text-lighten-1">Nuestros Productos</h4>
+    <p class="white-text text-darken-2">Disfruta de nuestras delicias hechas con amor y los mejores ingredientes</p>
+  </div>
+
+  <!-- Grid de productos -->
+  <div class="container">
+    <div class="row" id="productos-container">
+      <!-- Aquí se inyectan los productos con JS -->
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="transparent z-depth-5">
+    <div class="container center-align">
+      <p class="white-text">© 2025 Mil Sabores. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- JS Personalizado -->
+  <script src="scriptProducto.js"></script>
+</body>
+</html>
