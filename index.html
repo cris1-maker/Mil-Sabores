@@ -2,46 +2,100 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pagina Web</title>
-  <!-- Materialize -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito de Compras - Mil Sabores</title>
+
+  <!-- Materialize CSS -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <!-- NAVBAR -->
-    <nav class="transparent z-depth-5">
-        <div class="nav-wrapper container">
-            <a href="index.html" class="brand-logo">Mil Sabores</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">Location</a></li>
-                <li>
-                    <a class="btn-medium  transparent">
-                    <i class="material-icons">add_shopping_cart</i>
-                    </a>
-                </li>
-                <li>
-                    <a class="btn-medium transparent" id="btnLoginSup" type="button" href="registro.html?open=login">
-                        <i class="material-icons">account_circle</i>
-                    </a>
-                </li>
+<body style="background-image: url('img/fondo.jpeg'); background-size: cover; background-attachment: fixed;">
 
-            </ul>
-        </div>
-    </nav>
-    <!-- MAIN CONTENT -->
-    <div class="container">
+  <!-- Navbar -->
+  <nav class="transparent z-depth-5">
+    <div class="nav-wrapper container">
+        <a href="index.html" class="brand-logo">Mil Sabores</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Location</a></li>
+            <li>
+                <a class="btn-medium  transparent">
+                <i class="material-icons">add_shopping_cart</i>
+                </a>
+            </li>
+            <li>
+                <a class="btn-medium transparent" id="btnLoginSup" type="button" href="registro.html?open=login">
+                    <i class="material-icons">account_circle</i>
+                </a>
+            </li>
+
+        </ul>
     </div>
-    <!-- FOOTER -->
-    <footer class="page-footer transparent z-depth-5">
-        <div class="container center-align">
-        <p>&copy; 2025 Pasteleria Mil sabores. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-    <!-- Materialize JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</nav>
+
+  <!-- Contenido principal -->
+  <div class="container">
+    <h3 class="center-align">Carrito de Compras</h3>
+    <p class="center-align">Aquí puedes revisar los productos seleccionados antes de confirmar tu compra.</p>
+
+    <table class="highlight centered white z-depth-2">
+      <thead class="orange lighten-4">
+        <tr>
+          <th>Imagen</th>
+          <th>Producto</th>
+          <th>Precio</th>
+          <th>Cantidad</th>
+          <th>Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><img src="img/torta.png" width="60"></td>
+          <td>Torta de Chocolate</td>
+          <td>$15.000</td>
+          <td>2</td>
+          <td>$30.000</td>
+        </tr>
+        <tr>
+          <td><img src="img/croasan.png" width="60"></td>
+          <td>Croasan</td>
+          <td>$2.500</td>
+          <td>3</td>
+          <td>$7.500</td>
+        </tr>
+        <tr>
+          <td><img src="img/galleta.png" width="60"></td>
+          <td>Galletas Decoradas</td>
+          <td>$1.000</td>
+          <td>5</td>
+          <td>$5.000</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Total -->
+    <div class="section center-align">
+      <h5 class="orange-text">Total: $42.500</h5>
+    </div>
+
+    <!-- Botones -->
+    <div class="center-align">
+      <button class="btn red waves-effect waves-light">Vaciar Carrito</button>
+      <a href="productos.html" class="btn orange waves-effect waves-light">← Seguir comprando</a>
+      <button class="btn green waves-effect waves-light">Finalizar Compra</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="page-footer transparent z-depth-5">
+    <div class="container center-align">
+    <p>&copy; 2025 Pasteleria Mil sabores. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+  <!-- Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
