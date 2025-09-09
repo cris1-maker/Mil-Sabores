@@ -81,7 +81,7 @@
         <ul id="nav-desktop" class="right hide-on-med-and-down">
           <li><a href="/pages/nosotros.html">Conócenos</a></li>
           <li><a href="/pages/productos.html">Menú</a></li>
-          <li><a href="#">Reserva Aquí</a></li>
+          <li><a href="/pages/contacto.html">Contacto</a></li>
           <li>
             <a class="btn-medium transparent" href="/pages/carrito.html">
               <i class="fas fa-shopping-cart"></i>
@@ -97,7 +97,7 @@
         <ul class="sidenav" id="mobile-nav">
           <li><a href="/pages/nosotros.html">Conócenos</a></li>
           <li><a href="/pages/productos.html">Menú</a></li>
-          <li><a href="#">Reserva Aquí</a></li>
+          <li><a href="/pages/contacto.html">Contacto</a></li>
           <li>
             <a class="btn-medium transparent" href="/pages/carrito.html">
               <i class="fas fa-shopping-cart"></i> Carrito
@@ -128,17 +128,17 @@
         <!-- aria-hidden="false" => esta pestaña se ve al cargar -->
         <form id="form-login" novalidate>
           <!-- "novalidate" desactiva mensajes nativos intrusivos; validamos por JS -->
-          <h1>Login</h1>
+          <h1>Inicio Sesión</h1>
 
           <!-- Campo: Email de usuario -->
           <div class="input-box">
-            <input id="loginEmail" type="email" placeholder="Email" required>
+            <input id="loginEmail" type="email" placeholder="Correo" required>
             <!-- type="email" aplica validación nativa de formato de correo -->
           </div>
 
           <!-- Campo: Password -->
           <div class="input-box">
-            <input id="loginPassword" type="password" placeholder="Password" required autocomplete="current-password">
+            <input id="loginPassword" type="password" placeholder="Contraseña" required autocomplete="current-password">
             <!-- Sin pattern en login: solo se compara con lo guardado al registrarse -->
             <!-- autocomplete="current-password" ayuda al autocompletado del navegador -->
           </div>
@@ -146,17 +146,17 @@
           <!-- Recordar y enlace de olvido (visual) -->
           <div class="remember-forgot">
             <!-- Checkbox informativo -->
-            <a href="#" id="forgotP">Forgot password?</a>
+            <a href="#" id="forgotP">Olvidaste tu contraseña?</a>
             <!-- Enlace de ejemplo (podrías enlazar a recuperación real) -->
           </div>
 
           <!-- Botón para enviar el login -->
-          <button type="submit" class="btnLogin">Login</button>
+          <button type="submit" class="btnLogin">Iniciar Sesión</button>
 
           <!-- Enlace para cambiar a la pestaña Registro -->
           <div class="login">
-            <p>Don't have an account?
-              <a href="#" class="register-link" data-target="tab-register">Register</a>
+            <p>No tienes una cuenta?
+              <a href="#" class="register-link" data-target="tab-register">Registrate</a>
               <!-- data-target indica a qué pestaña cambiar (lo usa tu JS) -->
             </p>
           </div>
@@ -168,7 +168,7 @@
         <!-- aria-hidden="true" => oculta hasta que el usuario elija "Register" -->
         <form id="form-register" novalidate>
           <!-- Validaremos manualmente con JS para mensajes claros -->
-          <h1>Register</h1>
+          <h1>Registro</h1>
 
           <!-- Campo: Nombre completo -->
           <div class="input-box">
@@ -180,7 +180,7 @@
             <input
               id="regEmail"
               type="email"
-              placeholder="Email"
+              placeholder="Correo"
               required
               pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
               title="Ingresa un correo válido (ej: nombre@dominio.cl)">
@@ -189,7 +189,7 @@
 
           <!-- Campo: Confirmar Email (debe coincidir con regEmail) -->
           <div class="input-box">
-            <input id="regEmail2" type="email" placeholder="Confirmar Email" required
+            <input id="regEmail2" type="email" placeholder="Confirma correo" required
                    title="Repite el mismo correo">
           </div>
 
@@ -264,7 +264,7 @@
           <!-- Enlace para volver a la pestaña de Login -->
           <div class="login-register">
             <p>¿Ya tienes cuenta?
-              <a href="#" class="login-link" data-target="tab-login">Login</a>
+              <a href="#" class="login-link" data-target="tab-login">Inicia Sesión</a>
               <!-- data-target="tab-login" indica que hay que mostrar la pestaña de login -->
             </p>
           </div>
@@ -272,7 +272,105 @@
       </div>
     </div>
   </main>
+  <!-- desde acá va la vista admin -->
+  <!-- sección administrador, solo demo visual. esta parte sirve como ejemplo para mostrar en la disertación cómo se vería un panel para gestionar usuarios y productos. no tiene lógica ni guarda datos. -->
+  <section class="container" style="margin: 16px auto;">
+    <!-- card principal de color azul gris para destacar la sección -->
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <!-- título de la tarjeta con icono de materialize -->
+        <span class="card-title">
+          <i class="material-icons left">admin_panel_settings</i>
+          Administrador (Demo)
+        </span>
+        <!-- texto descriptivo explicando que esto es solo visual -->
+        <p>sección solo de presentación para explicar flujos de administración. no persiste datos ni ejecuta acciones.</p>
+      </div>
+    </div>
 
+    <!-- fila que contiene las pestañas -->
+    <div class="row">
+      <div class="col s12">
+        <!-- tabs de materialize para alternar entre usuarios y productos -->
+        <ul class="tabs z-depth-1">
+          <li class="tab col s6"><a class="active" href="#admin-usuarios">usuarios</a></li>
+          <li class="tab col s6"><a href="#admin-productos">productos</a></li>
+        </ul>
+      </div>
+
+      <!-- tab de usuarios (demo visual) -->
+      <div id="admin-usuarios" class="col s12" style="padding-top: 16px;">
+        <div class="card">
+          <div class="card-content">
+            <!-- título del bloque usuarios -->
+            <span class="card-title">
+              <i class="material-icons left">group_add</i>
+              Agregar Usuario
+            </span>
+
+            <!-- formulario de ejemplo para agregar usuario -->
+            <form>
+              <div class="input-field">
+                <input type="text" id="au-nombre" />
+                <label for="au-nombre">nombre</label>
+              </div>
+
+              <div class="input-field">
+                <input type="email" id="au-email" />
+                <label for="au-email">email</label>
+              </div>
+
+              <!-- select con roles: usuario o administrador -->
+              <div class="input-field">
+                <select id="au-rol">
+                  <option value="user" selected>usuario</option>
+                  <option value="admin">administrador</option>
+                </select>
+                <label for="au-rol">rol</label>
+              </div>
+
+              <!-- botón solo visual -->
+              <button type="button" class="btn waves-effect">guardar (demo)</button>
+            </form>
+          </div>
+
+          <!-- lista de usuarios de ejemplo -->
+          <ul class="collection">
+            <li class="collection-item">
+              <span><strong>juan pérez</strong> — juan@example.com — <em>user</em></span>
+              <a class="secondary-content btn-flat disabled">eliminar (demo)</a>
+            </li>
+            <li class="collection-item">
+              <span><strong>admin demo</strong> — admin@example.com — <em>admin</em></span>
+              <a class="secondary-content btn-flat disabled">eliminar (demo)</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- tab de productos (demo visual) -->
+      <div id="admin-productos" class="col s12" style="padding-top: 16px;">
+        <div class="card">
+          <div class="card-content">
+            <!-- título del bloque productos -->
+            <span class="card-title">
+              <i class="material-icons left">inventory_2</i>
+              Agregar Producto
+            </span>
+            <!-- formulario de ejemplo para agregar producto -->
+            <form>
+              <div class="input-field">
+                <input type="text" id="ap-nombre" />
+                <label for="ap-nombre">nombre del producto</label>
+              </div>
+              <div class="input-field">
+                <input type="number" id="ap-precio" min="0" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- ===== PIE DE PÁGINA ===== -->
   <footer class="page-footer transparent z-depth-5">
     <!-- Transparente con sombra; contenido centrado -->

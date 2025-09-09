@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detalle de Producto</title>
+
+  <!-- Materialize CSS -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/styles.css"/>
+</head>
+<body>
+  <!-- Botones sociales verticales -->
+  <div class="social-buttons">
+    <a href="https://facebook.com" target="_blank" class="btn-floating blue darken-4">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://instagram.com" target="_blank" class="btn-floating pink lighten-2">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://wa.me/56912345678" target="_blank" class="btn-floating gradient-green">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+  <!-- NAVBAR -->
+  <nav class="transparent z-depth-5">
+    <div class="nav-wrapper container">
+      <a href="/pages/index.html" class="brand-logo">Mil Sabores</a>
+      <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul id="nav-desktop" class="right hide-on-med-and-down">
+        <li><a href="/pages/nosotros.html">Conócenos</a></li>
+        <li><a href="/pages/productos.html">Menú</a></li>
+        <li><a href="/pages/contacto.html">Contacto</a></li>
+        <li><a class="btn-medium transparent" href="/pages/carrito.html"><i class="fas fa-shopping-cart"></i></a></li>
+        <li><a class="btn-medium transparent" href="/pages/registro.html"><i class="fas fa-user"></i></a></li>
+      </ul>
+      <ul class="sidenav" id="mobile-nav">
+        <li><a href="/pages/nosotros.html">Conócenos</a></li>
+        <li><a href="/pages/productos.html">Menú</a></li>
+        <li><a href="/pages/contacto.html">Contacto</a></li>
+        <li><a class="btn-medium transparent" href="/pages/carrito.html"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
+        <li><a class="btn-medium transparent" href="/pages/registro.html"><i class="fas fa-user"></i> Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- DETALLE DEL PRODUCTO -->
+  <main class="container" style="margin-top: 50px;">
+    <div class="row">
+      <!-- Imagen del producto -->
+      <div class="col s12 m5">
+        <img src="/img/Boda.png" alt="Producto Ejemplo" class="responsive-img z-depth-3" style="border-radius: 10px;">
+      </div>
+
+      <!-- Descripción y botón -->
+      <div class="col s12 m7">
+        <h3>Pastel de bodas</h3>
+        <p class="flow-text">
+          Nuestro pastel de bodas es una obra de arte dulce, cuidadosamente elaborado con capas esponjosas de bizcocho suave y relleno cremoso de vainilla y frutas frescas. Cubierto con un delicado glaseado de fondant o crema chantilly, cada detalle está diseñado para reflejar elegancia y romanticismo. Perfecto para celebrar momentos inolvidables, combina sabor exquisito y presentación impecable, convirtiéndose en el centro de atención de tu gran día.
+        </p>
+        <p><strong>Precio:</strong> $100000</p>
+        <a href="/pages/carrito.html" class="btn waves-effect waves-light" style="background-color:#561411;">
+              Agregar al carro
+              <i class="material-icons right">shopping_cart</i>
+            </a>
+      </div>
+    </div>
+
+    <!-- Productos relacionados -->
+    <h5 style="margin-top: 50px;">Productos Relacionados</h5>
+    <div class="row">
+      <div class="col s12 m4">
+        <div class="card1">
+          <div class="card-image">
+            <img src="/img/cheese.png" alt="Producto Relacionado 1">
+          </div>
+          <div class="card-content">
+            <span class="card-title">Chessecake</span>
+            <p>Cheesecake cremoso con base de galleta.</p>
+          </div>
+          <div class="card-action">
+            <a href="/pages/carrito.html" class="btn waves-effect waves-light" style="background-color:#561411;">
+              Agregar
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12 m4">
+        <div class="card1">
+          <div class="card-image">
+            <img src="/img/torta.png" alt="Torta de Chocolate">
+          </div>
+          <div class="card-content">
+            <span class="card-title">Torta de chocolate</span>
+            <p>Torta de chocolate cremosa 30 personas.</p>
+          </div>
+          <div class="card-action">
+            <a href="/pages/carrito.html" class="btn waves-effect waves-light" style="background-color:#561411;">
+              Agregar
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12 m4">
+        <div class="card1">
+          <div class="card-image">
+            <img src="/img/pavlova.png" alt="Pavlova">
+          </div>
+          <div class="card-content">
+            <span class="card-title">Pavlova</span>
+            <p>Postre de merengue crocante con frutas frescas.</p>
+          </div>
+          <div class="card-action">
+            <a href="/pages/carrito.html" class="btn waves-effect waves-light" style="background-color:#561411;">
+              Agregar
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="page-footer transparent z-depth-5">
+    <div class="container center-align">
+      <p>&copy; 2025 Pastelería Mil Sabores. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

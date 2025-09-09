@@ -584,3 +584,24 @@ select {
 .wrapper1 label {
   color: white !important;
 }
+
+
+.card1 {
+  background-color: #f1efecdd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  color: #333;
+  overflow: hidden; /* Muy importante para que la imagen no se salga de los bordes */
+}
+
+.card1 .card-image img {
+  width: 100%;        /* Que ocupe todo el ancho de la tarjeta */
+  height: auto;       /* Mantener proporción */
+  display: block;
+  border-bottom-left-radius: 10px;  /* Opcional: bordes redondeados de la imagen */
+  border-bottom-right-radius: 10px; /* si quieres que coincida con la tarjeta */
+}
+
+.card1 .card-content p {
+  color: #000000; /* Reemplaza por el color que quieras */
+}

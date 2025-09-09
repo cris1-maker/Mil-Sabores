@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const productos = [
     { nombre: "Brownie", precio: 8900, imagen: "/img/browni.png", descripcion: "Brownie de chocolate intenso y húmedo." },
-    { nombre: "Macarons", precio: 4900, imagen: "/img/macarons.png", descripcion: "Macarons franceses rellenos de crema suave." },
+    { nombre: "Pastel de Bodas", precio: 100000, imagen: "/img/Boda.png", descripcion: "Pastel de boda personalisado." },
     { nombre: "Croissant", precio: 3200, imagen: "/img/croasan.png", descripcion: "Croissant de mantequilla hojaldrado y crujiente." },
     { nombre: "Red Velvet", precio: 8200, imagen: "/img/redvelvet.png", descripcion: "Torta Red Velvet con crema de queso." },
     { nombre: "Pavlova", precio: 8700, imagen: "/img/pavlova.png", descripcion: "Postre de merengue crocante con frutas frescas." },
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="card-content center-align">
           <h6>${producto.nombre}</h6>
           <p>$${producto.precio.toLocaleString('es-CL')}</p>
-          <a class="btn waves-effect" style="background-color:#561411">Agregar</a>
+          <a href="/pages/detalle.html" class="btn waves-effect" style="background-color:#561411">Agregar</a>
         </div>
       </div>
     `;
