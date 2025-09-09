@@ -12,12 +12,14 @@ html, body {
   background-size: cover;
 }
 
+/*Cada titulo o parrafo color blanco y con sombra*/
 h3, h4, p {
   text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
   color: white;
   font-weight: normal;
 }
 
+/*Asegura que el container y la seccion sea flex y mueve el footer abajo*/
 .container, .section {
   flex: 1; /* Empuja el footer hacia abajo */
 }
@@ -33,6 +35,7 @@ nav .brand-logo {
   margin-right: 20px;
 }
 
+/*Estilo para el navBar*/
 #nav-mobile a {
   position: relative;
   font-size: 1.1em;
@@ -198,8 +201,15 @@ select {
 
 .wrapper .login,
 .wrapper .login-register,
-.remember-forgot { font-size: 14px; text-align: center; }
+.remember-forgot { font-size: 14px; text-align: center; color: white;}
 
+#forgotP {
+  font-size: 0.9em;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+
+}
 /* ===== ICONO CLOSE ===== */
 .wrapper .icon-close {
   position: absolute;
@@ -287,45 +297,32 @@ select {
 .carousel-container {
   position: relative;
   width: 100%;
-  max-width: 600px; /* ancho máximo en desktop */
+  max-width: 600px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.carousel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+/* Altura responsiva */
+#myCarousel {
+  max-height: 320px;
   overflow: hidden;
-  width: 100%;
 }
 
-.carousel-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+/* Ajustar solo las imágenes del carrusel */
+#myCarousel .carousel-item img {
+  max-height: 380px;   /* límite de altura */
+  width: auto;         /* que no se deforme horizontalmente */
+  object-fit: contain; /* mantiene proporciones sin recortar */
+  margin: 0 auto;      /* centra la imagen */
 }
 
-.carousel .carousel-item img {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
-  border-radius: 10px;
-  transition: transform 0.2s, box-shadow 0.2s;
-  cursor: pointer;
-}
 
 /* Banner de texto */
 .carousel-text-banner {
   position: absolute;
-  top: 20px;
+  top:10px;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(253, 252, 252, 0.188);
@@ -347,35 +344,27 @@ select {
 
 /* ===== MEDIA QUERIES ===== */
 @media screen and (max-width: 992px) {
-  .carousel-container {
-    max-width: 450px;
-  }
-  .carousel-text-banner {
-    font-size: 1.3em;
-    padding: 8px 16px;
-  }
+  .carousel-container { max-width: 450px; }
+  .carousel-text-banner { font-size: 1.3em; padding: 8px 16px; }
+
+  #myCarousel { max-height: 260px; }
+  #myCarousel .carousel-item img { height: 260px; }
 }
 
 @media screen and (max-width: 600px) {
-  .carousel-container {
-    max-width: 90%; /* se ajusta casi al 100% de la pantalla */
-  }
-  .carousel .carousel-item img {
-    height: auto; /* se adapta automáticamente */
-  }
-  .carousel-text-banner {
-    font-size: 1.1em;
-    padding: 6px 12px;
-  }
+  .carousel-container { max-width: 90%; }
+  .carousel-text-banner { font-size: 1.1em; padding: 6px 12px; }
+
+  #myCarousel { max-height: 200px; }
+  #myCarousel .carousel-item img { height: 200px; }
 }
 
 @media screen and (max-width: 380px) {
-  .carousel-text-banner {
-    font-size: 1em;
-    padding: 4px 10px;
-  }
-}
+  .carousel-text-banner { font-size: 1em; padding: 4px 10px; }
 
+  #myCarousel { max-height: 160px; }
+  #myCarousel .carousel-item img { height: 160px; }
+}
 
 /* ===== BADGE DESTACADOS ===== */
 .badge-destacados {
@@ -472,7 +461,7 @@ select {
   padding: 5px 0;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===== RESPONSIVE REGISTRO ===== */
 @media (max-width: 992px) { .wrapper { max-width: 380px; } .wrapper h1 { font-size: 26px; } }
 
 @media (max-width: 600px) {
@@ -492,30 +481,25 @@ select {
 }
 
 /* ===== CAROUSEL CLICKABLE ===== */
-#myCarousel .carousel-item img {
-  cursor: pointer; /* cursor de mano */
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
 #myCarousel .carousel-item img:hover {
-  transform: scale(1.05); /* efecto hover */
+  transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
 #myCarousel .carousel-item img:active {
-  transform: scale(0.97); /* efecto click */
+  transform: scale(0.97);
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .card-producto {
   position: relative;
-  overflow: visible !important; /* permite que el tooltip salga */
+  overflow: visible !important;
   z-index: 1;
 }
 
 .descripcion-tooltip {
   position: absolute;
-  background: rgba(86, 20, 17, 0.95);
+  background: #561411f2;
   color: #fff;
   font-size: 0.85rem;
   padding: 8px 10px;
@@ -525,11 +509,78 @@ select {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.2s ease;
-  z-index: 99999; /* ahora sí, arriba de todo */
+  z-index: 99999;
 }
-
 
 /* Mostrar al hacer hover */
 .card-producto:hover .descripcion-tooltip {
   opacity: 1;
+}
+
+
+/* Wrapper más ancho y alto */
+.wrapper1 {
+  position: static;
+  margin: 12px auto 24px auto;
+  width: 100%;
+  max-width: 600px;       /* antes 420px → ahora más ancho */
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .2);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  color: white;
+  display: block;
+  border-radius: 20px;
+  justify-content: center;
+  transition: transform 0.3s ease, height .2s ease;
+  padding: 24px;           /* añade espacio interno */
+  overflow: visible !important;
+}
+
+/* Encabezado */
+.wrapper1 h1 {
+  font-size: 28px;
+  line-height: 1.2;
+  text-align: center;
+  margin: 4px 0 16px;
+}
+
+/* Botón */
+.wrapper1 .btnContact {
+  width: 100%;
+  height: 44px;
+  background: white;
+  color: #333;
+  border: none;
+  outline: none;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  margin-top: 12px;      /* un poco más separado */
+}
+
+/* Inputs y textarea */
+.wrapper1 input,
+.wrapper1 textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.1);
+  color: white;
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+/* Textarea más grande */
+.wrapper1 textarea {
+  min-height: 150px;    /* antes más pequeño, ahora más alto */
+  resize: vertical;     /* permite cambiar tamaño vertical */
+}
+
+/* Labels en blanco */
+.wrapper1 label {
+  color: white !important;
 }

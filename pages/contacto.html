@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contacto</title>
+
+  <!-- Materialize CSS -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="/css/styles.css"/>
+</head>
+<body>
+  <!-- NAVBAR (igual que tus otras páginas) -->
+  <nav class="transparent z-depth-5">
+    <div class="nav-wrapper container">
+      <a href="/pages/index.html" class="brand-logo">Mil Sabores</a>
+      <a href="#" data-target="mobile-nav" class="sidenav-trigger">
+        <i class="material-icons">menu</i>
+      </a>
+      <ul id="nav-desktop" class="right hide-on-med-and-down">
+        <li><a href="/pages/nosotros.html">Conócenos</a></li>
+        <li><a href="/pages/productos.html">Menú</a></li>
+        <li><a href="#">Reserva Aquí</a></li>
+        <li>
+          <a class="btn-medium transparent" href="/pages/carrito.html">
+            <i class="fas fa-shopping-cart"></i>
+          </a>
+        </li>
+        <li>
+          <a class="btn-medium transparent" id="btnLoginSup" href="/pages/registro.html">
+            <i class="fas fa-user"></i>
+          </a>
+        </li>
+      </ul>
+      <ul class="sidenav" id="mobile-nav">
+        <li><a href="/pages/nosotros.html">Conócenos</a></li>
+        <li><a href="/pages/productos.html">Menú</a></li>
+        <li><a href="#">Reserva Aquí</a></li>
+        <li>
+          <a class="btn-medium transparent" href="/pages/carrito.html">
+            <i class="fas fa-shopping-cart"></i> Carrito
+          </a>
+        </li>
+        <li>
+          <a class="btn-medium transparent" href="/pages/registro.html">
+            <i class="fas fa-user"></i> Login
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="auth-main">
+    <div class="wrapper1">
+      <h1>Contacto</h1>
+      <form action="#" method="post">
+        <div class="input-field">
+          <input id="nombre" type="text" name="nombre" required>
+          <label for="nombre">Nombre Completo</label>
+        </div>
+
+        <div class="input-field">
+          <input id="correo" type="email" name="correo" required>
+          <label for="correo">Correo electrónico</label>
+        </div>
+
+        <div class="input-field">
+          <textarea id="mensaje" class="materialize-textarea" name="mensaje" required></textarea>
+          <label for="mensaje">Mensaje</label>
+        </div>
+
+        <button type="submit" class="btnContact btn waves-effect waves-light">Enviar</button>
+      </form>
+    </div>
+  </main>
+  <!-- FOOTER -->
+    <footer class="page-footer transparent z-depth-5">
+        <div class="container center-align">
+            <p>&copy; 2025 Pastelería Mil Sabores. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="/javascript/scriptContacto.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Inicializa Sidenav
+        const elemsSidenav = document.querySelectorAll('.sidenav');
+        M.Sidenav.init(elemsSidenav);
+
+        // Inicializa selects si los agregas después
+        const elemsSelect = document.querySelectorAll('select');
+        M.FormSelect.init(elemsSelect);
+
+        // Actualiza labels flotantes
+        M.updateTextFields();
+      });
+    </script>
+</body>
+</html>

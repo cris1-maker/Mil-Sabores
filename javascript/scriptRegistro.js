@@ -174,3 +174,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (selRegion && selRegion.value) llenarComunas(selRegion.value);
   showTab('tab-login'); // por defecto siempre mostrar login
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    let elems = document.querySelectorAll('.sidenav');
+    M.Sidenav.init(elems);
+});
