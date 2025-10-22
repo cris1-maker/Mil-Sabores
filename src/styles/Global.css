@@ -1,0 +1,773 @@
+/* =========================================
+   BASE / GLOBAL
+   ========================================= */
+   html, body {
+    height: 100%;
+    min-height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small;
+    background-image: url(/img/fondo.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  /* Títulos/párrafos con sombra general (se anula en secciones que lo necesiten) */
+  h3, h4, p {
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    color: white;
+    font-weight: normal;
+  }
+  
+  /* Mantén el footer abajo cuando haya poco contenido */
+  .container, .section, main { flex: 1; }
+  
+  /* =========================================
+     NAVBAR
+     ========================================= */
+  nav { background-color: rgba(0, 0, 0, 0.8) !important; }
+  nav .brand-logo { display: flex; align-items: center; margin-right: 20px; }
+  #nav-mobile a {
+    position: relative; font-size: 1.1em; color: white; text-decoration: none;
+    font-weight: 500; margin-left: 40px;
+  }
+  #nav-mobile a::after {
+    content: ''; position: absolute; left: 0; right: 0; bottom: -5px; height: 2px;
+    background: white; transform: scaleX(0); transition: transform 0.3s ease;
+  }
+  #nav-mobile a:hover::after { transform: scaleX(1); }
+  
+  /* Sidenav por encima de todo */
+  .sidenav, .sidenav-overlay { z-index: 1200; }
+  
+  /* =========================================
+     MAIN
+     ========================================= */
+  main { flex: 1; }
+  
+  /* =========================================
+     AUTH (pantalla login/registro moderna)
+     ========================================= */
+  .auth-page {
+    min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    padding: 32px 16px; background: transparent;
+  }
+  .auth-card {
+    width: min(600px, 92vw); padding: 32px 36px; border-radius: 16px;
+    background: rgba(255, 255, 255, 0.14); backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); box-shadow: 0 10px 45px rgba(0,0,0,.35);
+    border: 1px solid rgba(255,255,255,.082); position: relative;
+    transition: box-shadow .3s ease, transform .3s ease;
+  }
+  .auth-tabs { display: flex; gap: 10px; margin-bottom: 20px; }
+  .auth-tab {
+    flex: 1; padding: 12px 14px; border-radius: 10px;
+    border: 1px solid rgba(255,255,255,.5); background: rgba(255,255,255,.15);
+    color: #fff; font-weight: 700; cursor: pointer; text-transform: uppercase;
+    letter-spacing: .5px; transition: transform .2s, background .2s, color .2s;
+  }
+  .auth-tab.active { background: #fff; color: #333; border-color: #eee; transform: scale(1.02); }
+  .auth-title {
+    text-align: center; color: #fff; margin: 12px 0 22px; font-weight: 900;
+    font-size: 1.8rem; text-transform: uppercase; letter-spacing: 1px;
+  }
+  .auth-form { display: grid; gap: 16px; }
+  .auth-form label { color: #fff; opacity: .95; font-weight: 700; font-size: 1rem; }
+  .auth-form input, .auth-form select {
+    width: 100%; padding: 12px 14px; border: 0; border-bottom: 1px solid rgba(255,255,255,.6);
+    background: transparent; color: #fff; outline: none; font-size: 1rem; box-shadow: none !important;
+  }
+  .auth-form input::placeholder { color: rgba(255,255,255,.8); }
+  .auth-form input:focus, .auth-form select:focus { border-bottom-color: #fff !important; }
+  .row2 { display: grid; gap: 16px; grid-template-columns: 1fr 1fr; }
+  @media (max-width: 640px) { .row2 { grid-template-columns: 1fr; } }
+  .auth-row { display: flex; align-items: center; justify-content: space-between; }
+  .remember, .terms { display: flex; align-items: center; gap: 8px; color: #fff; font-weight: 600; }
+  .primary {
+    margin-top: 12px; padding: 12px 16px; border-radius: 999px; border: 0; cursor: pointer;
+    font-weight: 800; font-size: 1.1rem; background: #fff; color: #333;
+    transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+  }
+  .primary:hover { transform: scale(1.03); background: #f2f2f2; }
+  .link { border: 0; background: transparent; color: #fff; text-decoration: underline; cursor: pointer; padding: 0; font-weight: 600; }
+  .swap { text-align: center; color: #fff; margin-top: 10px; font-weight: 600; }
+  .msg  { color: #fff; text-align: center; margin-top: 8px; font-weight: 700; }
+  .container .auth-page { width: 100%; }
+  
+  /* =========================================
+     CONTACTO (wrapper1)
+     ========================================= */
+  .wrapper1 {
+    position: static; margin: 12px auto 24px; width: 100%; max-width: 600px; background: transparent;
+    border: 2px solid rgba(255,255,255,.2); backdrop-filter: blur(20px); box-shadow: 0 0 10px rgba(0,0,0,.2);
+    color: white; display: block; border-radius: 20px; padding: 24px; overflow: visible !important;
+  }
+  .wrapper1 h1 { font-size: 28px; line-height: 1.2; text-align: center; margin: 4px 0 16px; }
+  .wrapper1 .btnContact {
+    width: 100%; height: 44px; background: white; color: #333; border: none; border-radius: 14px;
+    font-size: 15px; font-weight: 600; cursor: pointer; box-shadow: 0 0 10px rgba(0,0,0,.1); margin-top: 12px;
+  }
+  .wrapper1 input, .wrapper1 textarea {
+    width: 100%; padding: 12px; border-radius: 12px; border: 1px solid rgba(255,255,255,.4);
+    background: rgba(255,255,255,.1); color: white; font-size: 15px; margin-bottom: 12px;
+  }
+  .wrapper1 textarea { min-height: 150px; resize: vertical; }
+  .wrapper1 label { color: white !important; }
+  
+  /* =========================================
+     TARJETAS GENERALES
+     ========================================= */
+  .card1 {
+    background-color: #f1efecdd; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,.2);
+    color: #333; overflow: hidden;
+  }
+  .card1 .card-image img { width: 100%; height: auto; display: block; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; }
+  .card1 .card-content p { color: #000; }
+  
+  /* =========================================
+     PRODUCTOS
+     ========================================= */
+  .productos-container {
+    position: relative; width: 80%; margin: 50px auto; padding: 20px; background-color: #561411;
+    border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,.1); border: #ffffff 8px solid;
+  }
+  .productos-container h4 { color: #feaee9; text-align: center; margin-bottom: 20px; }
+  .card-producto {
+    background: rgba(255,255,255,.15); border-radius: 16px; overflow: visible !important;
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,.2); box-shadow: 0 8px 24px rgba(0,0,0,.2);
+    transition: transform .3s ease-in-out; position: relative; z-index: 1;
+  }
+  .card-producto:hover { transform: translateY(-5px); box-shadow: 0 12px 20px rgba(0,0,0,.3); }
+  .card-producto img { width: 100%; height: 200px; object-fit: cover; }
+  .card-producto .card-content { padding: 16px; }
+  .card-producto h6 {
+    font-size: 1.2rem; color: #fff; font-weight: 600; text-shadow: 1px 1px 3px rgba(0,0,0,.7);
+  }
+  .card-producto p { color: #f1f1f1; text-shadow: 1px 1px 3px rgba(0,0,0,.5); margin-bottom: 1rem; }
+  .card-producto .btn { background-color: #848789; color: white; width: 100%; transition: background-color .2s; }
+  .card-producto .btn:hover { background-color: #a09599; }
+  
+  /* Tooltip producto */
+  .descripcion-tooltip {
+    position: absolute; background: #561411f2; color: #fff; font-size: .85rem; padding: 8px 10px;
+    border-radius: 6px; text-align: center; white-space: normal; opacity: 0; pointer-events: none;
+    transition: opacity .2s ease; z-index: 99999;
+  }
+  .card-producto:hover .descripcion-tooltip { opacity: 1; }
+  
+  /* =========================================
+     CAROUSEL (genérico)
+     ========================================= */
+  .carousel-container {
+    position: relative; width: 100%; max-width: 600px; margin: 0 auto;
+    display: flex; justify-content: center; align-items: center;
+  }
+  #myCarousel { max-height: 320px; overflow: hidden; }
+  #myCarousel .carousel-item img { max-height: 380px; width: auto; object-fit: contain; margin: 0 auto; }
+  #myCarousel .carousel-item img:hover { transform: scale(1.05); box-shadow: 0 8px 20px rgba(0,0,0,.3); }
+  #myCarousel .carousel-item img:active { transform: scale(0.97); box-shadow: 0 4px 10px rgba(0,0,0,.2); }
+  
+  /* Banner de texto */
+  .carousel-text-banner {
+    position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
+    background: rgba(253,252,252,.188); padding: 10px 20px; border-radius: 5px;
+    font-size: 1.5em; font-weight: 600; color: #fff; text-shadow: 1px 1px 4px rgba(0,0,0,.5);
+    animation: fadeSlide .8s ease-in-out; white-space: nowrap;
+  }
+  @keyframes fadeSlide {
+    from { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+    to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+  }
+  
+  /* Responsive carrusel */
+  @media screen and (max-width: 992px) {
+    .carousel-container { max-width: 450px; }
+    .carousel-text-banner { font-size: 1.3em; padding: 8px 16px; }
+    #myCarousel { max-height: 260px; }
+    #myCarousel .carousel-item img { height: 260px; }
+  }
+  @media screen and (max-width: 600px) {
+    .carousel-container { max-width: 90%; }
+    .carousel-text-banner { font-size: 1.1em; padding: 6px 12px; }
+    #myCarousel { max-height: 200px; }
+    #myCarousel .carousel-item img { height: 200px; }
+  }
+  @media screen and (max-width: 380px) {
+    .carousel-text-banner { font-size: 1em; padding: 4px 10px; }
+    #myCarousel { max-height: 160px; }
+    #myCarousel .carousel-item img { height: 160px; }
+  }
+  
+  /* Badge “Destacados” */
+  .badge-destacados {
+    position: absolute; top: 20px; right: -50px;
+    background: linear-gradient(45deg, #d50a0a, #ff0000); color: #fff; font-weight: bold;
+    padding: 15px 60px; border-radius: 6px; transform: rotate(45deg); z-index: 20;
+    font-size: 1.2em; text-align: center; text-shadow: 1px 1px 4px rgba(0,0,0,.4);
+    border: 3px solid #fff;
+  }
+  @media screen and (max-width: 992px) { .badge-destacados { padding: 12px 45px; font-size: 1.2em; right: -40px; } }
+  @media screen and (max-width: 600px) { .badge-destacados { padding: 10px 35px; font-size: 1em; right: -30px; } }
+  
+  /* =========================================
+     BLOG — LISTA ORDENADA + FIX TITULO EN IMAGEN
+     ========================================= */
+  .blog-page { max-width: 1100px; margin: 0 auto; padding: 24px 16px 48px; }
+  
+  /* Anula sombras/colores globales solo dentro del blog */
+  .blog-page h1, .blog-page h2, .blog-page h3, .blog-page h4,
+  .blog-page p, .blog-page time, .blog-page a {
+    color: #222 !important; text-shadow: none !important;
+  }
+  
+  /* Evita que Materialize monte .card-title sobre la imagen en el blog */
+  .blog-page .card .card-image .card-title {
+    position: static !important; display: block; margin: 8px 12px 0; padding: 0;
+    color: #222 !important; text-shadow: none !important; background: transparent !important;
+  }
+  
+  /* Cabecera */
+  .blog-page__header h1 { margin: 0 0 4px; font-weight: 800; }
+  .blog-page__header p { margin: 0 0 18px; color: #555 !important; }
+  
+  /* Grilla responsiva */
+  .blog-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+  @media (min-width: 901px) { .blog-grid > * { grid-column: span 4; } }       /* 3 por fila */
+  @media (min-width: 601px) and (max-width: 900px) { .blog-grid > * { grid-column: span 6; } } /* 2 por fila */
+  @media (max-width: 600px) { .blog-grid > * { grid-column: span 12; } }       /* 1 por fila */
+  
+  /* Tarjeta */
+  .blog-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 10px 24px rgba(0,0,0,.12);
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .blog-card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(0,0,0,.18); }
+  .blog-card__link { display: grid; grid-template-rows: auto 1fr auto; color: inherit; text-decoration: none; height: 100%; }
+  
+  /* Imagen */
+  .blog-card__image-wrap { width: 100%; height: 180px; overflow: hidden; }
+  .blog-card__image { width: 100%; height: 100%; object-fit: cover; display: block; }
+  
+  /* Cuerpo */
+  .blog-card__body { padding: 14px 16px 8px; }
+  .blog-card__title { margin: 0 0 6px; font-size: 18px; font-weight: 800; line-height: 1.2; }
+  .blog-card__excerpt {
+    margin: 0 0 10px; font-size: 14px; color: #555 !important;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .blog-card__date { font-size: 12px; color: #7a7a7a !important; }
+  
+  /* Acción */
+  .blog-card__action {
+    display: flex; align-items: center; gap: 8px; padding: 12px 16px 14px; border-top: 1px solid #eee;
+  }
+  .blog-card__cta { font-size: 13px; font-weight: 700; color: #e36b00; }
+  .blog-card__soon { font-size: 12px; color: #999 !important; }
+  
+  @media (max-width: 600px) {
+    .blog-card__image-wrap { height: 160px; }
+    .blog-card__title { font-size: 16px; }
+  }
+  
+  /* =========================================
+     BLOG FAB (mini tarjeta flotante a /blog)
+     ========================================= */
+  .blog-fab {
+    position: fixed; right: 16px; bottom: 16px; z-index: 1050;
+    display: flex; align-items: center; gap: 10px;
+    max-width: 260px; padding: 10px 12px; border-radius: 14px;
+    background: rgba(255,255,255,.92); backdrop-filter: blur(8px);
+    box-shadow: 0 8px 24px rgba(0,0,0,.18);
+    text-decoration: none; color: #111; transform: scale(.94);
+    transition: transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+  }
+  .blog-fab:hover { transform: scale(1.0); box-shadow: 0 10px 28px rgba(0,0,0,.24); }
+  .blog-fab-img { width: 56px; height: 56px; border-radius: 10px; object-fit: cover; flex-shrink: 0; }
+  .blog-fab-body { min-width: 0; }
+  .blog-fab-title { margin: 0; font-weight: 700; font-size: 14px; line-height: 1.1; color: #111; text-shadow: none; }
+  .blog-fab-desc  {
+    margin: 2px 0 0; font-size: 12px; color: #444; text-shadow: none;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  @media (max-width: 480px) {
+    .blog-fab { right: 12px; bottom: 12px; max-width: 220px; padding: 9px 10px; transform: scale(.92); }
+    .blog-fab-img { width: 48px; height: 48px; border-radius: 9px; }
+    .blog-fab-title { font-size: 13px; }
+    .blog-fab-desc { font-size: 11.5px; -webkit-line-clamp: 2; }
+  }
+  
+  /* =========================================
+     SOCIAL (vertical izquierda)
+     ========================================= */
+  .social-buttons-vertical {
+    position: fixed; top: 50%; left: 16px; transform: translateY(-50%);
+    display: flex; flex-direction: column; gap: 12px; z-index: 1100; pointer-events: none;
+  }
+  .social-buttons-vertical a {
+    pointer-events: auto; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; color: #fff !important; text-decoration: none;
+    box-shadow: 0 3px 8px rgba(0,0,0,.35); transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+  }
+  .social-buttons-vertical a i { font-size: 1.1rem; line-height: 1; }
+  .social-buttons-vertical a:hover { transform: scale(1.08); box-shadow: 0 6px 14px rgba(0,0,0,.45); filter: brightness(1.05); }
+  .gradient-green { background: linear-gradient(135deg, #25d366, #128c7e) !important; }
+  
+  /* Compat antigua (si aún la usas) */
+  .social-buttons {
+    position: fixed; top: 50%; left: 15px; transform: translateY(-50%);
+    display: flex; flex-direction: column; gap: 10px; z-index: 1000;
+  }
+  .social-buttons .btn-floating {
+    width: 40px; height: 40px; font-size: 1.1em; display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 3px 8px rgba(0,0,0,.25); transition: transform .3s ease;
+  }
+  .social-buttons .btn-floating:hover { transform: scale(1.1); }
+  @media (max-width: 992px) {
+    .social-buttons-vertical { left: 10px; gap: 10px; }
+    .social-buttons-vertical a { width: 40px; height: 40px; }
+  }
+  @media (max-width: 480px) {
+    .social-buttons-vertical { left: 8px; }
+    .social-buttons-vertical a { width: 38px; height: 38px; }
+  }
+  
+  /* =========================================
+     EQUIPO
+     ========================================= */
+  .team-section { margin: 80px 0; }
+  .team-container {
+    background-color: white; padding: 10px 60px; border-radius: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,.1); max-width: 1200px; width: 90%; margin: 0 auto;
+  }
+  .team-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; }
+  .team-member { text-align: center; transition: transform .3s; }
+  .team-member img { width: 150px; height: auto; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto; }
+  .team-member:hover { transform: translateY(-5px); }
+  
+  /* =========================================
+     FOOTER
+     ========================================= */
+  .page-footer {
+    background-color: transparent !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center; padding: 5px 0;
+  }
+  /* ==== FIX visual para selects (Región / Comuna) ==== */
+  .auth-form select {
+    color: #000 !important;              /* texto negro visible */
+    background-color: #fff !important;   /* fondo blanco sólido */
+    border: 1px solid #ccc !important;
+    border-radius: 8px !important;
+    padding: 10px 12px !important;
+    height: auto !important;             /* evita recorte vertical */
+    line-height: 1.4 !important;         /* corrige alineación */
+    appearance: none;                    /* limpia estilos nativos */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    box-shadow: none !important;
+  }
+  
+  .auth-form select:focus {
+    border-color: #111 !important;
+    outline: none !important;
+  }
+  
+  /* Opciones del desplegable */
+  .auth-form select option {
+    color: #000 !important;
+    background: #fff !important;
+    padding: 6px 10px;
+  }
+  
+  /* Arreglo del contenedor para evitar que corte el menú desplegable */
+  .auth-card {
+    overflow: visible !important;
+  }
+  /* BLOG PROMO CARD */
+  .blog-promo-card {
+    max-width: 220px;               /* tamaño compacto */
+    margin: 12px auto;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .blog-promo-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  }
+  
+  .blog-promo-card .card-image img {
+    height: 130px;
+    object-fit: cover;
+  }
+  
+  .blog-promo-card .card-content {
+    background: #fff;
+    padding: 12px;
+    text-align: center;
+  }
+  
+  .blog-card-title {
+    font-size: 1rem;
+    color: #111;
+    font-weight: 700;
+  }
+  /* ===== BLOG ===== */
+.blog-wrap {
+  background: transparent; /* respeta tu fondo si lo usas */
+}
+
+.blog-title {
+  font-weight: 700;
+  letter-spacing: .5px;
+  margin: 8px 0 28px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,.15);
+  color: #ffffff;
+  /* si tu sitio usa textos blancos, cambia por: color:#fff; */
+}
+
+.blog-caso {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  background: #e9e9e9;               /* “gris tarjeta” del wireframe */
+  border-radius: 10px;
+  padding: 20px;
+  margin: 0 0 28px 0;
+}
+
+.blog-caso.reverse {                  /* alterna izquierda/derecha */
+  flex-direction: row-reverse;
+}
+
+.caso-texto {
+  flex: 1 1 50%;
+  min-width: 260px;
+}
+
+.caso-titulo {
+  margin: 0 0 8px 0;
+  font-weight: 700;
+  color: #1c1c1c;
+}
+
+.caso-resumen {
+  margin: 0 0 10px 0;
+  color: #333;
+  line-height: 1.45;
+}
+
+.caso-fecha {
+  margin: 0 0 16px 0;
+  color: #757575;
+  font-size: .9rem;
+}
+
+.caso-acciones .btn {
+  font-weight: 700;
+  border-radius: 6px;
+}
+
+.caso-media {
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.caso-media img {
+  width: 100%;
+  max-width: 560px;     /* similar a la caja grande del wireframe */
+  aspect-ratio: 16/9;   /* mantiene proporción tipo “X grande” */
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #d1d1d1; /* imita el borde del boceto */
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .blog-caso, .blog-caso.reverse {
+    flex-direction: column;
+  }
+  .caso-media img {
+    max-width: 100%;
+  }
+}
+
+/*************** AUTH (Login/Registro) — versión única y visible ***************/
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+.auth-card {
+  background: rgba(255,255,255,0.96);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 14px;
+  padding: 24px;
+  max-width: 560px;
+  width: 100%;
+  box-shadow: 0 12px 36px rgba(0,0,0,.18);
+  overflow: visible; /* para que el select no se corte */
+}
+
+.auth-tabs {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.auth-tab {
+  appearance: none;
+  background: #f7f7fa;
+  border: 1px solid #d9d9e3;
+  padding: 10px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 700;
+  color: #1f1f1f;
+  transition: transform .12s ease, background .2s ease, border-color .2s ease;
+}
+.auth-tab:hover { transform: translateY(-1px); }
+.auth-tab.active {
+  background: #f3b43a;
+  border-color: #f3b43a;
+  color: #222;
+}
+
+.auth-title {
+  text-align: center;
+  margin: 12px 0 20px;
+  font-weight: 800;
+  font-size: 1.6rem;
+  color: #1d1d1f; /* texto oscuro para que no “desaparezca” */
+  text-shadow: none;
+}
+
+.auth-form {
+  display: grid;
+  gap: 12px;
+}
+.auth-form label {
+  color: #2b2b2b;
+  font-weight: 600;
+}
+
+/* Inputs y selects normales (NO textarea aquí) */
+.auth-form input[type="text"],
+.auth-form input[type="email"],
+.auth-form input[type="password"],
+.auth-form input[type="tel"],
+.auth-form select.browser-default {
+  width: 100%;
+  background: #f7f7f9;
+  border: 1px solid #d9d9e3;
+  color: #1f1f1f;
+  padding: 10px 12px;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.auth-form input::placeholder { color: #7a7a85; }
+.auth-form input:focus,
+.auth-form select.browser-default:focus {
+  border-color: #f3b43a;
+  box-shadow: 0 0 0 3px rgba(243,180,58,.25);
+  background: #fff;
+}
+
+/* Selects (Región/Comuna) más legibles */
+.auth-form select.browser-default {
+  color: #000 !important;
+  background-color: #fff !important;
+  border: 1px solid #ccc !important;
+  border-radius: 8px !important;
+  padding: 10px 12px !important;
+  height: auto !important;
+  line-height: 1.4 !important;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* 2 columnas región/comuna */
+.row2 {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 600px) { .row2 { grid-template-columns: 1fr; } }
+
+/* Términos y fila recordar/olvidar */
+.terms {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #2b2b2b;
+}
+.terms input[type="checkbox"] { width: 18px; height: 18px; accent-color: #f3b43a; }
+
+.auth-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #3a3a3a;
+}
+.remember { color: #3a3a3a; }
+
+/* Botón primario */
+.primary {
+  background: linear-gradient(180deg, #f8c35a, #f3b43a);
+  border: 1px solid #e3a02d;
+  color: #1b1b1b;
+  font-weight: 800;
+  padding: 12px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform .06s ease, box-shadow .2s ease, filter .2s ease;
+}
+.primary:hover { box-shadow: 0 6px 18px rgba(243,180,58,.35); filter: brightness(1.02); }
+.primary:disabled { opacity: .65; cursor: not-allowed; box-shadow: none; }
+
+/* Links y mensajes */
+.link {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: #c97800;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.link:hover { color: #a96300; }
+
+.msg {
+  margin: 8px 0 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #fff7e6;
+  border: 1px solid #ffd9a1;
+  color: #5c3b00;
+}
+.swap { text-align: center; color: #2f2f2f; }
+
+/*************** CONTACTO — inputs normales + textarea grande ***************/
+.contact-page {
+  padding: 32px 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-card {
+  background: rgba(255,255,255,0.96);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 14px;
+  padding: 24px;
+  max-width: 640px;
+  width: 100%;
+  box-shadow: 0 12px 36px rgba(0,0,0,.18);
+}
+
+.contact-title {
+  text-align: center;
+  margin: 4px 0 18px;
+  font-weight: 800;
+  font-size: 1.6rem;
+  color: #1d1d1f;
+}
+
+.contact-form { display: grid; gap: 14px; }
+
+.field { display: grid; gap: 6px; }
+.field label { color: #2b2b2b; font-weight: 600; }
+
+/* ⛔️ IMPORTANTE: inputs NORMALES */
+.contact-form input[type="text"],
+.contact-form input[type="email"] {
+  width: 100%;
+  background: #f7f7f9;
+  border: 1px solid #d9d9e3;
+  color: #1f1f1f;
+  padding: 10px 12px;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.contact-form input::placeholder { color: #7a7a85; }
+.contact-form input:focus {
+  border-color: #f3b43a;
+  box-shadow: 0 0 0 3px rgba(243,180,58,.25);
+  background: #fff;
+}
+
+/* ✅ SOLO el textarea grande */
+.contact-form textarea {
+  width: 100%;
+  min-height: 200px;            /* altura inicial mayor */
+  background: #fefefe;          /* un poco más claro para destacarlo */
+  border: 1px solid #d9d9e3;
+  color: #1f1f1f;
+  padding: 12px 14px;
+  border-radius: 10px;
+  outline: none;
+  resize: vertical;
+  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.contact-form textarea::placeholder { color: #7a7a85; }
+.contact-form textarea:focus {
+  border-color: #f3b43a;
+  box-shadow: 0 0 0 3px rgba(243,180,58,.25);
+  background: #fff;
+}
+
+.contact-actions { margin-top: 6px; display: flex; justify-content: flex-end; }
+.contact-note { margin: 8px 0 0; color: #444; font-size: .95rem; text-align: center; }
+
+/*************** BLOG — (deja tus estilos actuales, sólo forzamos legibilidad) ***************/
+.blog-wrap { background: transparent; }
+.blog-title {
+  font-weight: 700;
+  letter-spacing: .5px;
+  margin: 8px 0 28px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,.15);
+  color: #ffffff;
+}
+
+/* Tarjetas “caso” del wireframe */
+.blog-caso {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  background: #e9e9e9;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 0 0 28px 0;
+}
+.blog-caso.reverse { flex-direction: row-reverse; }
+.caso-texto { flex: 1 1 50%; min-width: 260px; }
+.caso-titulo { margin: 0 0 8px 0; font-weight: 700; color: #1c1c1c; }
+.caso-resumen { margin: 0 0 10px 0; color: #333; line-height: 1.45; }
+.caso-fecha { margin: 0 0 16px 0; color: #757575; font-size: .9rem; }
+.caso-acciones .btn { font-weight: 700; border-radius: 6px; }
+.caso-media { flex: 1 1 50%; display: flex; justify-content: center; align-items: center; }
+.caso-media img {
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #d1d1d1;
+}
+@media (max-width: 992px) {
+  .blog-caso, .blog-caso.reverse { flex-direction: column; }
+  .caso-media img { max-width: 100%; }
+}
