@@ -10,6 +10,7 @@ export default function Contacto() {
   return (
     <div className="contact-page container section">
       <div className="contact-card">
+        
         {/* Título */}
         <h4 className="contact-title">Contacto</h4>
 
@@ -58,11 +59,33 @@ export default function Contacto() {
             </button>
           </div>
 
-          {/* Nota opcional */}
           <p className="contact-note">
             Respondemos dentro de 24–48 horas hábiles.
           </p>
         </form>
+
+        {/* Mapa */}
+        <div className="section">
+          <h4 className="center-align" style={{color:"black"}} >Nuestras Ubicaciones</h4>
+
+          <div
+            style={{
+              width: "100%",
+              height: "400px",
+              borderRadius: "15px",
+              overflow: "hidden",
+              boxShadow: "0 4px 15px rgba(0,0,0,0.3)",
+              marginTop: "20px"
+            }}
+          >
+            <iframe 
+            src="https://www.google.com/maps/d/u/0/embed?mid=1goLO4e8Tx8cKU_4ktdw3_bK3F-qiGpk&ehbc=2E312F&noprof=1" 
+            width="640" 
+            height="480"
+            ></iframe>
+          </div>
+        </div>
+
       </div>
     </div>
   );

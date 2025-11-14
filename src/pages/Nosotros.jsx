@@ -14,7 +14,7 @@ export default function Nosotros() {
 
   return (
     <>
-      <div className="container section">
+      <div className="container section nosotros-page">
         <h3 className="center-align">Conócenos</h3>
         <p className="flow-text center-align">
           En <strong>Mil Sabores</strong> llevamos la pasión por la repostería al
