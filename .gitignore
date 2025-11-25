@@ -1,0 +1,21 @@
+# === MAVEN / JAVA (todos los microservicios) ===
+**/target/
+**/.mvn/
+**/*.iml
+**/.classpath
+**/.project
+**/.settings/
+**/.idea/
+
+# === NODE / REACT / VITE (front) ===
+front/node_modules/
+front/dist/
+front/.vite/
+front/.eslintcache
+
+# === SISTEMA / EDITOR ===
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
